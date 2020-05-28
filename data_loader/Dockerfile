@@ -3,4 +3,4 @@ ADD . /myapp
 WORKDIR /myapp
 RUN python -m pip install -r requirements.txt
 # COPY headlines.py .
-CMD ["python", "live_data.py"]
+CMD ["python", "data_loader.py"]

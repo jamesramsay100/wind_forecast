@@ -28,7 +28,7 @@ def get_latest():
 
 if __name__ == '__main__':
     # set up database
-    client = pymongo.MongoClient("mongodb://localhost:27017")
+    client = pymongo.MongoClient("mongodb://mongodb:27017")  # second 'mongodb' refers to container name
     mydb = client['wind_data_db']  # the database
     mycol = mydb["brackelsham"]  # collection is the same as table
 

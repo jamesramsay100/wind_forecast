@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  data_loader:
+    build: './data_loader'
+    container_name: data_loader
+#    ports:
+#    - "27017:27017"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: unless-stopped
+    ports:
+    - "27017:27017"
+    volumes:
+    - "mongodbdata:/data/db"
+
+volumes:
+  mongodbdata:
