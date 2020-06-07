@@ -10,6 +10,14 @@ services:
     depends_on:
       - mongodb
 
+  app:
+    build: './app'
+    container_name: app
+    ports:
+    - "8050:8050"
+    depends_on:
+      - mongodb
+
   mongodb:
     image: mongo
     container_name: mongodb
